@@ -1,0 +1,11 @@
+@extends('admin.template.main')
+@section('content')
+{!! Form::model($user,['route'=>['usuario.update', $user->id],'method'=>'PUT' ])  !!}		
+@include('usuario.forms.usr');
+			{!! Form::submit('ACTUALIZAR', ['class' => 'btn btn-primary'] ) !!}
+	{!! Form::close()  !!}
+
+	{!! Form::open(['route'=>['usuario.destroy', $user->id],'method'=>'DELETE' ])  !!}		
+			{!! Form::submit('ELIMINAR', ['class' => 'btn btn-danger'] ) !!}
+	{!! Form::close()  !!}
+@stop
